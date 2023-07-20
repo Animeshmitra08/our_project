@@ -1,0 +1,328 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+body{
+    overflow-x: hidden;
+}
+.sec1{
+    position: -webkit-sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6rem;
+    width: 100%;
+    background-color: rgb(129, 198, 245);
+    padding: 2rem 4.8rem;
+}
+.sec1 .logo{
+    font-size: 3rem;
+}
+.sec1 .navbar .navbar-list{
+    display: flex;
+    list-style: none;
+    gap: 4.8rem;
+}
+.sec1 .navbar .navbar-list .navbar-link:link,
+.sec1 .navbar .navbar-list .navbar-link:visited{
+    display: inline-block;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.5s;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.8rem;
+}
+.sec1 .navbar .navbar-list .navbar-link:hover,
+.sec1 .navbar .navbar-list .navbar-link:active{
+    background-color: aliceblue;
+}
+
+
+.responsive-navbar{
+    display: none;
+    background: transparent;
+    cursor: pointer;
+}
+.responsive-navbar .icon-btn{
+    width: 4rem;
+    height: 4rem;
+    border: 2px solid black;
+}
+.responsive-navbar .icon-btn[name="close-outline"]{
+    display: none;
+}
+
+
+
+
+@media only screen and (max-width: 58em) {
+
+    .logo{
+        font-size: 40%;
+    }
+    .responsive-navbar{
+        display: block;
+        z-index: 999;
+    }
+    .sec1{
+        position: relative;
+    }
+    .navbar{
+        position: absolute;
+        background: white;
+        right: 0;
+        top: 0;
+        width: 50%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        transform: translateX(100%);
+        transition: all .5s linear;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+    .navbar-list{
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .present .navbar{
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .present .responsive-navbar .icon-btn[name="close-outline"]{
+        display: block;
+    }
+    .present .responsive-navbar .icon-btn[name="menu-outline"]{
+        display: none;
+    }
+}
+
+.slider{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(238, 196, 196);
+}
+
+
+header{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    padding: 1em;
+    font-size: 2rem;
+    background: rgba(221, 221, 221, 0.705);
+    height: 4em;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(2px);
+}
+
+header .nav-bar-toggle{
+    display: none;
+    cursor: pointer;
+}
+header .nav-bar-toggle > #icon-btn{
+    font-size: 3rem;
+}
+header > .cs > ul{
+    display: flex;
+    list-style: none;
+    gap: 3em;
+}
+header > .cs > ul > li > a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+header > .cs > ul > li > a > i{
+    display: none;
+}
+
+
+.slide{
+    width: 100%;
+    height: 100vh;
+    padding: 80px 5% 5% 5%;
+    display: flex;
+    align-items: center;
+}
+.slide > .card{
+    background: rgb(255, 255, 255);
+    border: 1px solid rgba(78, 78, 78, 0.849);
+    width: 23em;
+    height: 25em;
+    border-radius: 10%;
+    float: right;
+    padding: 20px;
+    display: flex;
+    gap: 1em;
+}
+.slide > .card > .ds1{
+    background-color: rgb(114, 114, 114);
+    height: 100%;
+    width: 70px;
+    border-radius: 5% 0 0 5%;       
+}
+.slide > .card > .ds2{
+    width: 100%;    
+}
+.slide > .card > .ds1 > img{
+    width: 6em;
+    border-radius: 50%;
+    margin: 5px;
+}
+.slide .title h1{    
+    font-size: 5rem;
+    margin-bottom: 2rem;
+}
+.slide .title .btn{
+    border: none;
+    padding: 1em 3em;
+    border-radius: 10px;
+    background-color: orange;
+    cursor: pointer;
+}
+
+
+.collab{
+    height: 80vh;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+}
+.collab h1{
+    font-size: 3rem;
+}
+.collab > .card-body{
+    border: 1px solid black;
+    width: 80vw;
+    height: 60vh;
+    padding: 1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.collab .card-body .card1{
+    height: 30rem;
+    width: 25rem;
+    background-color: rgb(79, 209, 209);
+    border-radius: 15px;
+}
+.collab .card-body .card1 img{
+    width: 100px;
+}
+
+
+
+.footer{
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 58em) {
+    header > .nav-bar-toggle{
+        position: absolute;
+        z-index: 9999;
+        color: rgb(0, 0, 0);
+        width: auto;
+        right: 1em;
+        top: 1em;
+    }
+    header > .nav-bar-toggle{
+        display: flex;
+    }
+
+    #icon-btn[name="right-arrow"]{
+        display: none;
+    }
+    #icon-btn[name="left-arrow"]{
+        display: block;
+    }
+    
+    .click #icon-btn[name="right-arrow"]{
+        display: block;
+    }
+    .click #icon-btn[name="left-arrow"]{
+        display: none;
+    }
+
+    header > .cs{
+        position: fixed;
+        inset: 0 0 0 30%;
+        background: rgba(95, 95, 95, 0.199);
+        backdrop-filter: blur(2px);
+        padding: min(30vh,10rem) 0;
+        
+        transform: translateX(100%);
+        transition: 350ms ease-in;
+    }
+
+    .cs[data-visible="true"]{
+        transform: translateX(0%);
+    }
+
+    
+    header > .cs > ul {
+        flex-direction: column;
+        gap: 0;
+    }
+    header > .cs > ul > li > a{
+        width: 100%;
+        display: flex;
+        gap: 2em;
+        font-size: larger;
+        padding: 1em 2.5em;
+    }
+    header > .cs > ul > li > a > i{
+        display: block;
+    }
+
+    header > .cs > ul > li:hover,
+    header > .cs > ul > li:active{
+        background-color: rgba(255, 255, 255, 0.644);
+    }
+    
+    .collab{
+        height: 60vh;
+    }
+
+    .collab > .card-body{
+        justify-content: space-around;
+        overflow-x: auto;
+        height: 40vh;
+    }
+    .collab .card-body .card1{
+        height: 20rem;
+    }
+}
