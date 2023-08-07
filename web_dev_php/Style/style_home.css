@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Ubuntu:wght@500&display=swap&family=Ysabeau+Infant:wght@500&family=Gabriela&family=Labrada:wght@500&display=swap');
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -10,114 +14,7 @@ html{
 body{
     overflow-x: hidden;
 }
-.sec1{
-    position: -webkit-sticky;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 6rem;
-    width: 100%;
-    background-color: rgb(129, 198, 245);
-    padding: 2rem 4.8rem;
-}
-.sec1 .logo{
-    font-size: 3rem;
-}
-.sec1 .navbar .navbar-list{
-    display: flex;
-    list-style: none;
-    gap: 4.8rem;
-}
-.sec1 .navbar .navbar-list .navbar-link:link,
-.sec1 .navbar .navbar-list .navbar-link:visited{
-    display: inline-block;
-    font-size: 1.5rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 500;
-    transition: all 0.5s;
-    padding: 0.8rem 1.5rem;
-    border-radius: 0.8rem;
-}
-.sec1 .navbar .navbar-list .navbar-link:hover,
-.sec1 .navbar .navbar-list .navbar-link:active{
-    background-color: aliceblue;
-}
 
-
-.responsive-navbar{
-    display: none;
-    background: transparent;
-    cursor: pointer;
-}
-.responsive-navbar .icon-btn{
-    width: 4rem;
-    height: 4rem;
-    border: 2px solid black;
-}
-.responsive-navbar .icon-btn[name="close-outline"]{
-    display: none;
-}
-
-
-
-
-@media only screen and (max-width: 58em) {
-
-    .logo{
-        font-size: 40%;
-    }
-    .responsive-navbar{
-        display: block;
-        z-index: 999;
-    }
-    .sec1{
-        position: relative;
-    }
-    .navbar{
-        position: absolute;
-        background: white;
-        right: 0;
-        top: 0;
-        width: 50%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-
-        transform: translateX(100%);
-        transition: all .5s linear;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-    }
-    .navbar-list{
-        flex-direction: column;
-        align-items: center;
-    }
-
-
-    .present .navbar{
-        transform: translateX(0);
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-    }
-
-    .present .responsive-navbar .icon-btn[name="close-outline"]{
-        display: block;
-    }
-    .present .responsive-navbar .icon-btn[name="menu-outline"]{
-        display: none;
-    }
-}
-
-.slider{
-    height: 100vh;
-    width: 100%;
-    background-color: rgb(238, 196, 196);
-}
 
 
 header{
@@ -125,12 +22,13 @@ header{
     width: 100%;
     display: flex;
     padding: 1em;
-    font-size: 2rem;
+    font-size: 1.8rem;
     background: rgba(221, 221, 221, 0.705);
     height: 4em;
     align-items: center;
     justify-content: space-between;
     backdrop-filter: blur(2px);
+    font-family: 'Ubuntu', sans-serif;
 }
 
 header .nav-bar-toggle{
@@ -148,11 +46,16 @@ header > .cs > ul{
 header > .cs > ul > li > a{
     text-decoration: none;
     color: rgb(0, 0, 0);
+    transition: 150ms ease-in;
 }
 header > .cs > ul > li > a > i{
     display: none;
 }
-
+header > .cs > ul > li > a:hover,
+header > .cs > ul > li > a:active{
+    color: rgb(255, 255, 255);
+    border-bottom: 2px solid white;
+}
 
 .slide{
     width: 100%;
@@ -161,37 +64,17 @@ header > .cs > ul > li > a > i{
     display: flex;
     align-items: center;
 }
-.slide > .card{
-    background: rgb(255, 255, 255);
-    border: 1px solid rgba(78, 78, 78, 0.849);
-    width: 23em;
-    height: 25em;
-    border-radius: 10%;
-    float: right;
-    padding: 20px;
-    display: flex;
-    gap: 1em;
-}
-.slide > .card > .ds1{
-    background-color: rgb(114, 114, 114);
-    height: 100%;
-    width: 70px;
-    border-radius: 5% 0 0 5%;       
-}
-.slide > .card > .ds2{
-    width: 100%;    
-}
-.slide > .card > .ds1 > img{
-    width: 6em;
-    border-radius: 50%;
-    margin: 5px;
+.slide > .title{
+    width: 100%;
 }
 .slide .title h1{    
     font-size: 5rem;
     margin-bottom: 2rem;
+    font-family: 'Gabriela', serif;
 }
 .slide .title .btn{
     border: none;
+    font-size: 1.5rem;
     padding: 1em 3em;
     border-radius: 10px;
     background-color: orange;
@@ -199,47 +82,100 @@ header > .cs > ul > li > a > i{
 }
 
 
+
+.work_details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+.work_details > h1{
+    font-size: 3rem;
+    font-family: 'Labrada', serif;
+}
 .collab{
-    height: 80vh;
     padding: 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3em;
 }
 .collab h1{
     font-size: 3rem;
-}
-.collab > .card-body{
-    border: 1px solid black;
-    width: 80vw;
-    height: 60vh;
-    padding: 1em;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.collab .card-body .card1{
-    height: 30rem;
-    width: 25rem;
-    background-color: rgb(79, 209, 209);
-    border-radius: 15px;
-}
-.collab .card-body .card1 img{
-    width: 100px;
+    font-family: 'Labrada', serif;
 }
 
+
+.collab > .container > .crd{
+    height: 40vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+}
+.collab > .container > .crd > i{
+    font-size: 6rem;
+    pointer-events: none;
+    color: rgb(78, 78, 78);
+}
+
+.card{
+    z-index: -1;
+    box-shadow: 5px 3px 14px -4px rgba(0,0,0,0.75);
+}
+
+
+.faq{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #303030c4;
+    flex-direction: column;
+    padding: 1em;
+}
+.faq > h1{
+    font-size: 3rem;
+    font-family: 'Labrada', serif;
+}
+.faq > .faq_content{
+    display: flex;
+}
 
 
 .footer{
-    background-color: antiquewhite;
+    background-color: rgb(211, 211, 211);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10vh;
+    justify-content: space-evenly;
+    height: 30vh;
+    gap: 1em;
+    font-family: 'Labrada', serif;
 }
-
-
+.footer > .company > p{
+    font-size: 1.3rem;
+}
+.footer > .links > ul{
+    padding: 0%;
+}
+.footer > .links > ul > li{
+    list-style: none;
+}
+.footer > .links > ul > li > a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
+}
+.footer > .icons{
+    display: flex;
+    flex-direction: column;
+}
+.footer > .icons > .social-icons{
+    display: flex;
+    gap: 1em;
+}
+.footer > .icons > .social-icons > i{
+    font-size: 2rem;
+    cursor: pointer;
+}
 
 
 
@@ -251,6 +187,17 @@ header > .cs > ul > li > a > i{
 
 
 @media (max-width: 58em) {
+
+    .slide > .title{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .slide .title .btn{
+        font-size: 1.5rem;
+    }
+
     header > .nav-bar-toggle{
         position: absolute;
         z-index: 9999;
@@ -272,6 +219,7 @@ header > .cs > ul > li > a > i{
     
     .click #icon-btn[name="right-arrow"]{
         display: block;
+        color: aliceblue;
     }
     .click #icon-btn[name="left-arrow"]{
         display: none;
@@ -280,10 +228,10 @@ header > .cs > ul > li > a > i{
     header > .cs{
         position: fixed;
         inset: 0 0 0 30%;
-        background: rgba(95, 95, 95, 0.199);
+        background: rgba(19, 19, 19, 0.863);
         backdrop-filter: blur(2px);
         padding: min(30vh,10rem) 0;
-        
+        height: 100vh;        
         transform: translateX(100%);
         transition: 350ms ease-in;
     }
@@ -296,13 +244,16 @@ header > .cs > ul > li > a > i{
     header > .cs > ul {
         flex-direction: column;
         gap: 0;
+        padding-left: 0%;
     }
     header > .cs > ul > li > a{
         width: 100%;
         display: flex;
         gap: 2em;
-        font-size: larger;
-        padding: 1em 2.5em;
+        font-size: 2rem;
+        padding: 1em 2em;
+        color: aliceblue;
+        transition: 250ms ease-in;
     }
     header > .cs > ul > li > a > i{
         display: block;
@@ -312,17 +263,24 @@ header > .cs > ul > li > a > i{
     header > .cs > ul > li:active{
         background-color: rgba(255, 255, 255, 0.644);
     }
-    
-    .collab{
-        height: 60vh;
+    header > .cs > ul > li > a:hover,
+    header > .cs > ul > li > a:active{
+        color: rgb(0, 0, 0);
     }
 
-    .collab > .card-body{
-        justify-content: space-around;
-        overflow-x: auto;
-        height: 40vh;
+    .collab > .container > .crd > i{
+        font-size: 4rem;
     }
-    .collab .card-body .card1{
-        height: 20rem;
+}
+
+@media (max-width: 415px){
+    .collab > .container > .crd{
+        height: 20vh;
+    }
+    .faq{
+        height: 50vh;
+    }
+    .footer{
+        height: 25vh;
     }
 }
